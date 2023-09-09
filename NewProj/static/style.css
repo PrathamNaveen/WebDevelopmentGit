@@ -15,8 +15,6 @@
     margin-bottom: 30px;
 }
 
-
-
 .about-me{
     flex-wrap: wrap;
     text-align: center;
@@ -24,5 +22,15 @@
     padding: 0;
     margin-left: 20%;
     margin-right: 20%;
-    margin-bottom: 10%;
+    margin-bottom: 5%;
+}
+
+#Footer{
+    display: flex;
+    background-color: turquoise;
+    height: 20vh;
+}
+
+.icons{
+    color: black;
 }
