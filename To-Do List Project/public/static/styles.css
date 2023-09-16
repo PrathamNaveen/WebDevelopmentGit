@@ -1,0 +1,91 @@
+html{
+    background-color: darkgreen;
+}
+
+.top{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 400px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh; 
+    margin: 0 auto; 
+    background-color:lightgreen;
+  }
+
+#heading{
+    color:black;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    height: 10vh;
+}
+
+.cal-img{
+    width: 30px;
+    height: 30px;   
+}
+
+.brief-img{
+    width: 30px;
+    height: 30px;
+}
+
+#foot{
+    color: gray;
+    margin-bottom: 0;
+}
+
+#input-box{
+    padding: 10px;
+    width: 320px;
+    border: none;
+    border-radius: 5px;
+}
+
+.box{
+    width: 400px;
+    height: 400px;
+}
+
+button{
+    height:35px;
+    width:35px;
+    border-radius: 15px;
+}
+
+.task-item{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#checkBox{
+    margin-right: 10px;
+}
+
+a{
+    color: blue;
+    font-family: sans-serif;
+    font-size: 25px;
+}
+
+input[type="checkbox"]:checked + label{
+    /* Target only input with a type of checkbox.
+     * If the type of checkbox is checked, cross the input and label.
+     * Keep in mind that you can NOT cross a checkbox.
+     * But it must be there as a "event handler".
+     * The plus is a selector that means something like "and" label
+     * The input is the checkbox that toggles "checked" and the label is the actual text that gets crossed. */
+      text-decoration: line-through;
+}

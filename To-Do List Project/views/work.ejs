@@ -1,0 +1,44 @@
+<!-- HTML for To-Do List Project -->
+<%- include("partials/header.ejs") %>
+
+<header>
+    <div class="top">   
+        <div class="calendar">
+            <img class="cal-img" src="/static/calendar.png" alt="calendar"/>
+            <a href="/" alt="briefcase">Today</a>
+        </div>
+        <div class="briefcase">
+            <img class="brief-img" src="/static/briefcase.png" alt="briefcase"/>
+            <a href="/work">Work</a>
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        <div id="heading">
+            </hr>
+            <h1 id="display-head"><%= day %>, <%= month %> <%= dayNum %></h1>
+            </hr>
+        </div>
+        <form action="/work" method="POST">
+            <input id="input-box" type="text" name="newTask" placeholder="New Task">
+            <button type="submit" value="OK" id="submitButton">+</button>
+            <% if (locals.task) { %>
+               <% for(var i=0;i<task.length;i++){ %>
+                    <div class="task-item">
+                        <input type="checkbox" id="task1">
+                        <label for="task1"><h2> <%= task[i] %> </h2></label>
+                    </div>
+               <% } %>
+            
+            <% } else { %>
+                <p>New Task</p>
+            <% } %>
+        </form>
+        <div class="box"></div>
+    </div>
+</main>
+
+
+<%- include("partials/footer.ejs") %>
