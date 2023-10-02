@@ -18,24 +18,39 @@
     <div class="container">
         <div id="heading">
             </hr>
-            <h1 id="display-head"><%= day %>, <%= month %> <%= dayNum %></h1>
+            <h1 id="display-head"><%= title %></h1>
             </hr>
         </div>
         <form action="/" method="POST">
             <input id="input-box" type="text" name="newTask" placeholder="New Task">
-            <button type="submit" value="OK" id="submitButton">+</button>
-            <% if (locals.task) { %>
-               <% for(var i=0;i<task.length;i++){ %>
+            <button type="submit" name="addButton" value="<%= title %>" id="submitButton">+</button>
+            <% if (locals.tasks) { %>
+               <% tasks.forEach((task)=>{ %>
                     <div class="task-item">
-                        <input type="checkbox" id="task1">
-                        <label for="task1"><h2> <%= task[i] %> </h2></label>
-                    </div>
-               <% } %>
+                        <input name="checkbox" data-item-id="<%= task._id %>" type="checkbox" id="task1">
+                        <label><h2><%= task.name %></h2></label>
+                        <input type="hidden" name="listName" value="<%=title%>"></input>
+                    </div>  
+               <% }); %>
             
             <% } else { %>
                 <p>New Task</p>
             <% } %>
         </form>
+        <script>
+            $(document).ready(function () {
+                $('input[type="checkbox"]').change(function () {
+                    const itemId = $(this).attr('data-item-id');
+                    const $itemToDelete = $(this).closest('.task-item'); // Get the parent item
+                    $.post('/delete', { itemId }, function (data) {
+                        // Handle the response if needed
+                        // You can update the UI to strike off the item here
+                        $itemToDelete.remove(); // Remove the item from the UI
+                    });
+                });
+            });
+        </script>
+        
         <div class="box"></div>
     </div>
 </main>
