@@ -11,8 +11,9 @@ const app = express();
 const port = 3000;
 const weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+const mongo_connection = process.env.CONNECTION;
 
-mongoose.connect("mongodb+srv://prathamnaveen:15%40mahTarp%4015@cluster0.anudp2c.mongodb.net/toDoListDB");
+mongoose.connect(mongo_connection);
 
 const toDoListSchema = new mongoose.Schema({
     name: String
