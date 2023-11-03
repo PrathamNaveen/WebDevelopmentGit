@@ -1,0 +1,31 @@
+<!-- HTML for the Anime API Project -->
+<%- include("partials/header.ejs") %>
+
+<div class="top-container">
+    <h1 id="head-title">Search For Your Favourite Anime</h1>
+    <form action="/search" method="POST">
+        <input id="search-title" type="text" name="search" placeholder="Enter Anime Title">
+        <button type="submit" id="search-button">Search</button>
+    </form>
+</div>
+
+<div class="bottom-container">
+    <% if (locals.content) { %>
+        <div class="content">
+            <img src="<%= content.images.jpg.image_url %>" alt="anime image" id="anime-image">
+            <h2>Title: <%= content.title %></h2>
+            <h3>Episode Count: <%= content.episodes %></h3>
+            <h3>Rank: <%= content.rank %></h3>
+            <h3>Popularity: <%= content.popularity %></h3>
+        </div>
+    <% } else { %>
+        <div class="random-button">
+            <form action="/random" method="POST">
+                <button type="submit" id="Random Button"><h2>Random Anime Generator</h2></button>
+            </form>
+        </div>
+    <% } %>
+</div>
+
+<%- include("partials/footer.ejs") %>
+    

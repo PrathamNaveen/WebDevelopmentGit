@@ -1,0 +1,80 @@
+/* Center-align the search bar */
+html{
+    background-color: #0D0809;
+}
+
+#top-container {
+    height: 100vh; /* Set the top container to full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#head-title {
+    font-size: 3em;
+    font-family: serif;
+    color: White;
+    margin-left: 32%;
+    margin-bottom: 20px; /* Add some spacing below the title */
+}
+
+#search-title {
+    width: 50%; /* Adjust the width as needed */
+    margin-left: 20%;
+    padding: 10px;
+    border-radius: 15px;
+    border: 1px solid #ccc; /* Add a border for better visibility */
+    font-size: 1.2em; /* Increase font size */
+    margin-bottom: 30px;
+}
+
+#search-button {
+    width: 10%; /* Adjust the width as needed */
+    padding: 10px;
+    border-radius: 15px;
+    border: none;
+    background-color: White; /* Change button background color */
+    color: Black; /* Change button text color */
+    font-size: 1.2em; /* Increase font size */
+    cursor: pointer; /* Add pointer cursor on hover */
+}
+
+/* Improve div display */
+#bottom-container {
+    width: 100%;
+    background-color: salmon;
+    margin-top: 30px;
+    padding: 20px; /* Add some padding to create space around content */
+}
+
+.content {
+    background-color: #1A1A1A; /* Add a background color to the content div */
+    padding: 20px; /* Add some padding to create space inside the content div */
+    border-radius: 10px; /* Add border-radius for rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+    text-align: center; /* Center-align content within the div */
+    font-family: sans-serif;
+    color: white;
+}
+
+/* Style for the anime image */
+#anime-image {
+    max-width: 100%; /* Ensure the image doesn't exceed its container */
+}
+
+.random-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+    width: 100%;
+    color: white;
+}

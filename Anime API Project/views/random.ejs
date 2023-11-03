@@ -1,0 +1,23 @@
+<%- include("partials/header.ejs") %>
+
+<div class="top-container">
+    <h1 id="head-title">Search For Your Favourite Anime</h1>
+    <form action="/search" method="POST">
+        <input id="search-title" type="text" name="title" placeholder="Enter Anime Title">
+        <button type="submit" value="OK" id="search-button">Search</button>
+    </form>
+</div>
+
+<div class="bottom-container">
+    <div class="content">
+        <% if(locals.content){ %>
+            <img src=<%= image %> alt="Image of the Random Anime"/>
+            <h2> <%= title %> </h2>
+            <h3> <%= numOfEps %> </h3>
+            <h3> <%= rank %> </h3>
+            <h3> <%= popularity %> </h3>
+        <% } %>
+    </div>
+</div>
+
+<%- include("partials/footer.ejs") %>
